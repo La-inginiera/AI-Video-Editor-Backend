@@ -1,13 +1,8 @@
 #!/bin/bash
 
 # Export Flask app environment variables
-export FLASK_APP=main.py
-export FLASK_ENV=development
+export FLASK_APP=application.py
+export FLASK_ENV=production
 
-# Optional: Create virtual environment and activate it
-# If you are using a virtual environment, uncomment these lines
-# source venv/bin/activate  # For Unix/MacOS
-# source venv/Scripts/activate  # For Windows
-
-# Run Flask
-flask run
+# Run Flask and bind to 0.0.0.0 to allow external connections
+flask run --host=0.0.0.0
